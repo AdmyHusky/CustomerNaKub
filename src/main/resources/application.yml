@@ -22,3 +22,12 @@ spring:
       name: administrator
       password: password
       roles: ADMIN
+
+  loan:
+    host: http://localhost:8082/api/loan
+    endpoint:
+      getInfo: info
+
+restTemplate:
+  connectionTimeOut: 5000
+  readTimeOut: 10000

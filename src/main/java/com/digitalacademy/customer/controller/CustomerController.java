@@ -80,7 +80,7 @@ public class CustomerController {
     }
 
     @GetMapping("/{id}")
-    public Optional<Customer> findByIdCustomer(@PathVariable Long id){
+    public Customer findByIdCustomer(@PathVariable Long id){
         return customService.getCustomerById(id);
     }
 
