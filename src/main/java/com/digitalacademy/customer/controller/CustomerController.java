@@ -79,9 +79,17 @@ public class CustomerController {
                 : ResponseEntity.notFound().build();
     }
 
+//    @GetMapping("/{id}")
+//    public Customer findByIdCustomer(@PathVariable Long id){
+//        return customService.getCustomerById(id);
+//    }
+
     @GetMapping("/{id}")
-    public Customer findByIdCustomer(@PathVariable Long id){
-        return customService.getCustomerById(id);
+    public ResponseEntity<?> findByIdCustomer(@PathVariable Long id){
+        Customer customer = customService.getCustomerById(id);
+        return customer != null ? ResponseEntity.ok(customer)
+                :ResponseEntity.notFound().build();
     }
+
 
 }

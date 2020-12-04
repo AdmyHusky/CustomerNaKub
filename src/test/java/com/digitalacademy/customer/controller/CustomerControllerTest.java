@@ -115,7 +115,7 @@ public class CustomerControllerTest {
         Long reqParam = 5L;
 
         mvc.perform(get("/customer/" + reqParam))
-                .andExpect(status().isNotFound())
+                .andExpect(status().isNotFound()) //404
                 .andReturn();
     }
 
