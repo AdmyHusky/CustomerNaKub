@@ -7,7 +7,6 @@ import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class CustomerService {
@@ -46,7 +45,12 @@ public class CustomerService {
         }
     }
 
-    public Customer getCustomerById(Long id){
-        return customerRepository.findAllById(id);
+    public Customer getCustomerById(Long id) {
+        Customer cs = customerRepository.findAllById(id);
+        if(cs != null) {
+            return cs;
+        }else {
+            return null;
+        }
     }
 }
